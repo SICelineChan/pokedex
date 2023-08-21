@@ -5,7 +5,7 @@
         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/79.png"
       />
       <p class="pokeId">#0079</p>
-      <p class="pokeName">slowpoke</p>
+      <div class="pokeName">SlowPoke</div>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {}
 
 <style>
 .poke-card {
-  width: 200px;
+  width: 180px;
   border-radius: 20px;
   background-color: #b2b2b2b2;
 }
