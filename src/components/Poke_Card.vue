@@ -8,10 +8,34 @@
       <div class="pokeName">SlowPoke</div>
     </div>
   </div>
+  <div class="poke-card">
+    <div v-if="!PokeInfo">Wait, it's loading!</div>
+    <div v-else>
+      <div class="pokeName">{{ PokeInfo.name }}</div>
+      <div class="pokeId">{{ PokeInfo.id }}</div>
+      <img v-bind:src="PokeInfo.sprites.front_default" />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      PokeInfo: null
+    }
+  },
+  methods: {
+    async fetchPokeInfo() {
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon/blastoise')
+      this.PokeInfo = await response.json()
+      console.log(this.PokeInfo)
+    }
+  },
+  mounted() {
+    this.fetchPokeInfo()
+  }
+}
 </script>
 
 <style>
